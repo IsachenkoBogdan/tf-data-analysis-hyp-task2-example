@@ -1,6 +1,6 @@
 import pandas as pd
 import numpy as np
-from scipy.stats import mannwhitneyu
+from scipy.stats import anderson_ksamp
 
 chat_id = 683820405 # Ваш chat ID, не меняйте название переменной
 
@@ -9,4 +9,4 @@ def solution(x: np.array, y: np.array) -> bool:
     # Это будет вашим решением
     # Не меняйте название функции и её аргументы
     alpha = 0.01
-    return mannwhitneyu(x, y).pvalue < alpha# Ваш ответ, True или False
+    return anderson_ksamp([x, y]).pvalue < alpha # Ваш ответ, True или False
